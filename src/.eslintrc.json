@@ -1,0 +1,234 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"settings": {
+		"react": {
+			"createClass": "createReactClass", // Regex for Component Factory to use,
+			// default to "createReactClass"
+			"pragma": "React", // Pragma to use, default to "React"
+			"fragment": "Fragment", // Fragment to use (may be a property of <pragma>),
+			//default to "Fragment"
+			"version": "detect", // React version.
+			//"detect" automatically picks the version you have installed.
+			// You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+			// default to latest and warns if missing
+			// It will default to "detect" in the future
+			"flowVersion": "0.53" // Flow version
+		}
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"plugins": [
+		"react",
+		"formatjs",
+		"@typescript-eslint"
+	],
+	"rules": {
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off",
+		"no-return-assign": "error",
+		"no-return-await": "error",
+		"no-script-url": "error",
+		"no-self-compare": "error",
+		"no-multi-str": "error",
+		"no-new-func": "error",
+		"no-new-wrappers": "error",
+		"no-param-reassign": "error",
+		"no-floating-decimal": "error",
+		"no-implied-eval": "error",
+		"no-labels": "error",
+		"no-lone-blocks": "error",
+		"no-loop-func": "error",
+		"no-multi-spaces": "error",
+		"no-constructor-return": "error",
+		"no-div-regex": "error",
+		"no-empty-function": "error",
+		"default-case-last": "error",
+		"consistent-return": "error",
+		"require-atomic-updates": "error",
+		"block-scoped-var": "error",
+		"no-eq-null": "error",
+		"no-template-curly-in-string": "error",
+		"no-unsafe-optional-chaining": "error",
+		"eol-last": [
+			"error",
+			"always"
+		],
+		"no-trailing-spaces": "error",
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1,
+				"maxEOF": 0
+			}
+		],
+		"eqeqeq": [
+			"error",
+			"always"
+		],
+		"max-len": [
+			"error",
+			{
+				"code": 100,
+				"tabWidth": 4,
+				"comments": 120,
+				"ignoreStrings": true
+			}
+		],
+		"prefer-const": [
+			"error",
+			{
+				"destructuring": "any",
+				"ignoreReadBeforeAssign": false
+			}
+		]
+	},
+	"overrides": [
+		{
+			"files": [
+				"*.ts",
+				"*.tsx",
+				"*.js",
+				"*.jsx"
+			],
+			"rules": {
+				"no-unused-vars": "off",
+				"no-explicit-any": "off",
+				"@typescript-eslint/no-unused-vars": [
+					"warn"
+				],
+				"@typescript-eslint/explicit-module-boundary-types": "off",
+				"semi": "off",
+				"quotes": [
+					"error",
+					"double",
+					{
+						"avoidEscape": true,
+						"allowTemplateLiterals": true
+					}
+				],
+				"@typescript-eslint/semi": [
+					"warn"
+				],
+				"react-hooks/exhaustive-deps": "off",
+				"no-mixed-spaces-and-tabs": [
+					"error",
+					"smart-tabs"
+				],
+				"function-paren-newline": [
+					"error",
+					{
+						"minItems": 2
+					}
+				],
+				"no-unsafe-optional-chaining": "error",
+				"react/jsx-max-props-per-line": [
+					"error",
+					{
+						"maximum": 1
+					}
+				],
+				"react/jsx-indent-props": [
+					"error",
+					"tab"
+				],
+				"react/jsx-first-prop-new-line": [
+					"error",
+					"multiline"
+				],
+				"react/jsx-closing-bracket-location": [
+					1,
+					"line-aligned"
+				],
+				"react/jsx-closing-tag-location": [
+					1,
+					"line-aligned"
+				],
+				"react/jsx-no-useless-fragment": "off",
+				"indent": [
+					"error",
+					"tab",
+					{
+						"VariableDeclarator": {
+							"var": 2,
+							"let": 2,
+							"const": 3
+						},
+						"MemberExpression": 1,
+						"FunctionExpression": {
+							"parameters": "first"
+						},
+						"FunctionDeclaration": {
+							"body": 2,
+							"parameters": "first"
+						},
+						"SwitchCase": 1,
+						"ArrayExpression": 1,
+						"ObjectExpression": 1,
+						"ImportDeclaration": 1,
+						"ignoreComments": true,
+						"ignoredNodes": [
+							"JSXElement *",
+							"JSXElement",
+							"JSXSpreadAttribute",
+							"JSXAttribute"
+						]
+					}
+				],
+				"function-call-argument-newline": [
+					"error",
+					"always"
+				],
+				"object-curly-newline": [
+					"error",
+					{
+						"ImportDeclaration": {
+							"multiline": true,
+							"minProperties": 3
+						},
+						"ExportDeclaration": "never"
+					}
+				],
+				"sort-imports": [
+					"error",
+					{
+						"ignoreCase": false,
+						"ignoreDeclarationSort": true,
+						"ignoreMemberSort": true,
+						"memberSyntaxSortOrder": [
+							"none",
+							"all",
+							"multiple",
+							"single"
+						],
+						"allowSeparatedGroups": false
+					}
+				],
+				"react/style-prop-object": [
+					2,
+					{
+						"allow": [
+							"FormattedNumber"
+						]
+					}
+				],
+				"no-use-before-define": "off",
+				"@typescript-eslint/no-use-before-define": "off",
+				"formatjs/no-offset": "error"
+			}
+		}
+	]
+}
