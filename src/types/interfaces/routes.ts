@@ -1,11 +1,11 @@
+//import { ReactNode } from "react";
 import { RouteProps } from "react-router-dom";
 
 export type BaseRoutesItem = RouteProps & {
-	element?: React.ReactNode | null;
-	path?: string;
-	exact?: boolean;
-	isAuth: boolean;
-	denyShowLoginPage?: boolean
+	path?: string,
+	exact?: boolean,
+	isAuth: boolean,
+	//denyShowLoginPage?: boolean
 };
 
 // export interface BaseRoutesItem extends RouteProps {

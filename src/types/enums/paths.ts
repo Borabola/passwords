@@ -1,5 +1,6 @@
 export const enum AppRouteEnum {
 	LOGIN = "/login",
-	DASHBOARD = "/",
+	HOME = "/",
+	PASSWORD_LIST = "/list",
 	PAGE_NOT_FOUND = "/404",
 }
