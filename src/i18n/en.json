@@ -1,4 +1,15 @@
 {
     "add": "Add",
-    "password": "Password"
+    "createPassword": "Create strong password",
+    "email": "Email",
+    "go": "Go",
+    "haveAccount": "Have account?",
+    "login": "Log in",
+    "loginWithGoogle": "Google login",
+    "muchPasswords": "Your passwords do not match.",
+    "password": "Password",
+    "yup.lowercase": "One lowercase character",
+    "yup.uppercase": "At least one uppercase character",
+    "yup.specialCharacter": "At least one special character",
+    "yup.oneNumber": "At least one number"
 }
