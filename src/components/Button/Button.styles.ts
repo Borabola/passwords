@@ -1,4 +1,7 @@
-import {Theme} from "@mui/material";
+import {
+	darken,
+	Theme
+} from "@mui/material";
 import { pxToRem } from "../../utils";
 
 export const buttonStyles = {
@@ -14,7 +17,7 @@ export const buttonStyles = {
 		),
 		fontSize: pxToRem(14),
 		fontWeight: 700,
-		borderRadius: (theme: Theme) =>theme.spacing(2/8),
+		borderRadius: (theme: Theme) => theme.spacing( 2 /8 ),
 		overflow: "hidden",
 		outline: "none",
 		transition: "0.3 ease",
@@ -28,17 +31,22 @@ export const buttonStyles = {
 		},
 
 		"&:disabled": {
-			opacity: 0.24,
+			opacity: 0.8,
 		},
-		//temporary property, not specified in the design
 		"&:hover": {
-			backgroundColor: "rgba(0, 0, 0, 0.05)",
+			backgroundColor: (theme: Theme) => darken(
+				theme.palette.primary.main,
+				0.3
+			),
 		},
 		"&:focus": {
-			backgroundColor: "rgba(0, 0, 0, 0.05)",
+			backgroundColor: (theme: Theme) => darken(
+				theme.palette.primary.main,
+				0.3
+			),
 		}
 	},
 	disabled: {
-		opacity: 0.24,
+		opacity: 0.8,
 	}
 };
