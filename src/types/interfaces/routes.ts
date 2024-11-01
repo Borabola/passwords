@@ -1,6 +1,10 @@
 //import { ReactNode } from "react";
 import { RouteProps } from "react-router-dom";
 
+export type stateType = {
+	from: { pathname: string }
+};
+
 export type BaseRoutesItem = RouteProps & {
 	path?: string,
 	exact?: boolean,
