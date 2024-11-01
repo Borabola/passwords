@@ -1,5 +1,8 @@
 import { lazy } from "react";
-import { AppRouteEnum, PrivateRoutes } from "../types";
+import {
+	AppRouteEnum,
+	PrivateRoutes
+} from "../types";
 
 const PasswordList = lazy(() => import("../pages/PasswordList"));
 

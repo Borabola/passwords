@@ -1,5 +1,9 @@
-import { FC, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import {
+	FC, Suspense
+} from "react";
+import {
+	Route, Routes
+} from "react-router-dom";
 import { Box } from "@mui/material";
 import PrivateRoute from "../hocs/PrivateRoute/PrivateRoute";
 import { commonRoutes } from "./commonRoutes";
