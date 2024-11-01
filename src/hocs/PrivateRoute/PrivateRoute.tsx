@@ -1,6 +1,8 @@
-import {FC, useEffect} from "react";
-import { Navigate, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import {FC} from "react";
+import {
+	Navigate, useLocation
+} from "react-router-dom";
+//import { useDispatch } from "react-redux";
 import { AppRouteEnum } from "../../types";
 //import { useTypedSelector } from "../store";
 //import MainLayout from "../layouts/MainLayout";
@@ -19,8 +21,10 @@ export const PrivateRoute: FC<PrivateRouteProps> = ({
 
 	//const { isAuth, isUserLoggedIn } = useIsLoggedIn();
 
-	const isAuth = true;
-	const isUserLoggedIn = true;
+	//const isAuth = true;
+	const isUserLoggedIn = false;
+
+	console.log("PrivateRoute");
 
 	// useEffect(
 	// 	() => {
@@ -40,7 +44,7 @@ export const PrivateRoute: FC<PrivateRouteProps> = ({
 	}
 
 	//return <MainLayout>{children}</MainLayout>;
-	return <>children</>;
+	return <>{children}</>;
 };
 
 export default PrivateRoute;
