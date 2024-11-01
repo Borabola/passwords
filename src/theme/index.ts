@@ -1,5 +1,11 @@
-import { createTheme, darken } from "@mui/material/styles";
-import { defaultBodyFontSize, pxToRem } from "../utils/pxToRem";
+import {
+	createTheme,
+	darken
+} from "@mui/material/styles";
+import {
+	defaultBodyFontSize,
+	pxToRem
+} from "../utils/pxToRem";
 
 const theme = createTheme({
 	typography: {
@@ -7,8 +13,8 @@ const theme = createTheme({
 	},
 	palette: {
 		primary: {
-			main: "#001064",
-			dark: "#6D7278",
+			main: "#406e6b", //"#71826d",
+			dark: "#71826d",
 			light: "rgba(0, 16, 100, 0.24)",
 			contrastText: "#FFFFFF",
 		},
@@ -28,7 +34,7 @@ const theme = createTheme({
 		},
 		background: {
 			default: "#F6F6F6",
-			paper: "#EDF1FF",
+			paper: "#F0F2F1",
 		},
 		common: {
 			white: "#FFFFFF",

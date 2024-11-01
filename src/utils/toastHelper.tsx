@@ -1,4 +1,7 @@
-import { FormattedMessage, IntlShape } from "react-intl";
+import {
+	FormattedMessage,
+	IntlShape
+} from "react-intl";
 import { toast } from "react-toastify";
 
 export const showToast = (): void => {
@@ -6,33 +9,6 @@ export const showToast = (): void => {
 	toast.error(
 		<FormattedMessage
 			id="errorServer"
-		/>,
-		{ toastId: currentId }
-	);
-};
-export const showAddProductSuccessToast = (): void => {
-	const currentId = "productSuccess";
-	toast.success(
-		<FormattedMessage
-			id="addProductSuccess"
-		/>,
-		{ toastId: currentId }
-	);
-};
-export const showAddProductFailToast = (): void => {
-	const currentId = "productFail";
-	toast.error(
-		<FormattedMessage
-			id="addProductFail"
-		/>,
-		{ toastId: currentId }
-	);
-};
-export const showUploadFailToast = (): void => {
-	const currentId = "uploadFail";
-	toast.error(
-		<FormattedMessage
-			id="uploadFiletFail"
 		/>,
 		{ toastId: currentId }
 	);

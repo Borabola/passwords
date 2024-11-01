@@ -1,13 +1,8 @@
-import { Box } from "@mui/material";
 import { FC } from "react";
+import { LoginContainer } from "../../containers/LoginContainer";
 
 export const Login: FC = () => {
-
-	return (
-		<Box>
-			LoginPage
-		</Box>
-	);
+	return (<LoginContainer />);
 };
 
 export default Login;

@@ -1,12 +1,10 @@
-import { Box } from "@mui/material";
 import { FC } from "react";
+import { MainContainer } from "../../containers/MainContainer";
 
 export const HomePage: FC = () => {
 
 	return (
-		<Box>
-			HomePage
-		</Box>
+		<MainContainer />
 	);
 };
 
