@@ -26,7 +26,6 @@ export const resulBlockStyles = {
 		justifyContent: "flex-start",
 		overflowX: "auto",
 		whiteSpace: "pre",
-
 		"&::-webkit-scrollbar": {
 			width: (theme: Theme) => theme.spacing(4 / 8),
 			height: (theme: Theme) => theme.spacing(4 / 8),
