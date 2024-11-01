@@ -1,7 +1,13 @@
 {
     "add": "Add",
+    "confirmPassword": "Confirm Password",
     "createPassword": "Create strong password",
     "email": "Email",
+    "emailAlreadyExist": "Email already exists",
+    "emailAlreadyInUse":  "Email already in use",
+    "errorInGoogleLogin": "Error with Google login",
+    "errorInLogin": "Login Error",
+    "errorServer": "Server error",
     "go": "Go",
     "haveAccount": "Have account?",
     "login": "Log in",

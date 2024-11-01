@@ -1,9 +1,15 @@
-import { useEffect, FC } from "react";
-import { CustomFormats, IntlProvider } from "react-intl";
+import {
+	useEffect, FC
+} from "react";
+import {
+	CustomFormats, IntlProvider
+} from "react-intl";
 import dayjs from "dayjs";
 //import { getCookie } from "@salesSuite/shared/utils";
 import messagesEn from "../../i18n/en.json";
-import { AppIntlProviderProps, MessagesProps } from "./AppIntlProvider.types";
+import {
+	AppIntlProviderProps, MessagesProps
+} from "./AppIntlProvider.types";
 import { getCookie } from "../../utils/cookie";
 
 export const AppIntlProvider: FC<AppIntlProviderProps> = ({
