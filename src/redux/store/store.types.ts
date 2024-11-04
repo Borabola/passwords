@@ -1,4 +1,4 @@
-import { store } from "../../app/App";
+import { store } from "../../App/App";
 import rootReducer from "../rootReducer";
 import { setupStore } from "./index";
 
