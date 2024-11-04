@@ -40,15 +40,7 @@ import {
 	outputtingError, outputtingGoogleError
 } from "../utils/toastHelper";
 
-export const AuthContext = createContext<AuthValues>({
-	currentUser:  null,
-	login: ({ email, password }: SProps) => {},
-	signup: ({
-		email, password
-	}: SProps) => {},
-	logout: () => {},
-	googlePopupSignIn: () => {},
-});
+export const AuthContext = createContext<AuthValues | null>(null);
 
 export const useAuth = () => {
 	return useContext(AuthContext);
@@ -122,7 +114,10 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 			setCurrentUser(newUser);
 			dispatch(requireAuthorization(AuthStatusEnum.AUTH));
 			//history.replace(from);
-			console.log("AuthContext login", auth)
+			console.log(
+				"AuthContext login",
+				auth
+			);
 			navigate("/");
 
 		} catch (error) {

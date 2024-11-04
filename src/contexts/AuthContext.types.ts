@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { Ensure } from "../utils/typesHelper";
 //import { stateType } from "../types"; !!
 
 export type AuthProviderProps = {
@@ -34,3 +35,5 @@ export interface AuthValues {
 	logout: () => Promise<void> | void;
 	googlePopupSignIn: () => Promise<void> | void;
 }
+
+export type AuthCurrentUser = Ensure<AuthValues, "currentUser">;

@@ -36,10 +36,10 @@ export const ResultBlock: FC<ResultBlockProps> = ({
 			<IconButton
 				aria-label="copy password"
 				sx={styles.iconBtn}
+				onClick={handleCopyToClipboard}
 			>
 				<ContentCopyIcon
 					sx={styles.icon}
-					onClick={handleCopyToClipboard}
 				/>
 			</IconButton>
 		</Box>

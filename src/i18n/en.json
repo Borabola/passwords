@@ -7,6 +7,7 @@
     "emailAlreadyInUse":  "Email already in use",
     "errorInGoogleLogin": "Error with Google login",
     "errorInLogin": "Login Error",
+    "passwordLength": "Password Length",
     "errorServer": "Server error",
     "go": "Go",
     "haveAccount": "Have account?",
