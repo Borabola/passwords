@@ -5,10 +5,33 @@ export const passwordFormStyles = {
 	lineWrapper: {
 		display: "flex",
 		justifyContent: "space-between",
-		gap: (theme: Theme) => theme.spacing(20 / 8),
+		gap: (theme: Theme) => ({
+			xs: theme.spacing(
+				0,
+				10 / 8
+			),
+			md: theme.spacing(20 / 8),
+		}),
+		flexWrap: {
+			xs: "wrap",
+			md: "no-wrap"
+		},
+		"& label": {
+			width: {
+				xs: "45%",
+				md: "auto"
+			},
+		}
 	},
 	blockWrapper: {
-		minWidth: (theme: Theme) => theme.spacing(500 / 8),
+		width: (theme: Theme) => ({
+			xs: "100%",
+			md: theme.spacing(500 / 8)
+		}),
+		minWidth: (theme: Theme) => ({
+			xs: theme.spacing(300 / 8),
+			md: theme.spacing(500 / 8)
+		}),
 		padding: (theme: Theme) => theme.spacing(30 / 8),
 		backgroundColor: "common.white",
 		borderRadius: (theme: Theme) => theme.spacing(10 / 8),
@@ -53,7 +76,10 @@ export const passwordFormStyles = {
 	},
 	title: {
 		textAlign: "center",
-		marginBottom: (theme: Theme) => theme.spacing(62 / 8),
+		marginBottom: (theme: Theme) => ({
+			xs: theme.spacing(20 / 8),
+			md: theme.spacing(60 / 8),
+		}),
 	},
 	textInput: {
 		color: "primary.main",

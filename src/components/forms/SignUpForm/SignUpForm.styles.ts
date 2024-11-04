@@ -1,7 +1,7 @@
 import { Theme } from "@mui/material";
 import { pxToRem } from "../../../utils/pxToRem";
 
-export const loginStyles = {
+export const signUpStyles = {
 	pageContent: {
 		width: (theme: Theme) => theme.spacing(343 / 8),
 		display: "flex",
@@ -23,7 +23,10 @@ export const loginStyles = {
 	},
 	title: {
 		textAlign: "center",
-		marginBottom: (theme: Theme) => theme.spacing(62 / 8),
+		marginBottom: (theme: Theme) => ({
+			xs: theme.spacing(20 / 8),
+			md: theme.spacing(60 / 8),
+		}),
 	},
 	textInput: {
 		color: "primary.main",
@@ -81,5 +84,23 @@ export const loginStyles = {
 			display: "none",
 			border: "none"
 		},
+	},
+	message: {
+		fontSize: pxToRem(14),
+		color: "primary.main",
+		marginRight: (theme: Theme) => theme.spacing(15 / 8),
+	},
+	loginWrap: {
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		marginTop: (theme: Theme) => ({
+			xs: theme.spacing(20 / 8),
+			md: theme.spacing(30 / 8),
+		}),
+		gap: (theme: Theme) => ({
+			xs: theme.spacing(10 / 8),
+			md: theme.spacing(20 / 8),
+		}),
 	},
 };

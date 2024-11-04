@@ -36,10 +36,8 @@ export const PasswordForm: FC<PasswordFormProps> = ({
 			{({
 				isSubmitting
 			}) => (
-				<Form>
-					<Box
-						sx={styles.blockWrapper}
-					>
+				<Box sx={styles.blockWrapper}>
+					<Form>
 						<Typography
 							sx={styles.title}
 							variant="h2"
@@ -90,8 +88,8 @@ export const PasswordForm: FC<PasswordFormProps> = ({
 								defaultMessage: "Go"
 							})}
 						</Button>
-					</Box>
-				</Form>
+					</Form>
+				</Box>
 			)}
 		</Formik>
 	);

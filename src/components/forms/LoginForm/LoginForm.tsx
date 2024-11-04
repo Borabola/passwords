@@ -1,10 +1,8 @@
-import {
-	FC,
-	useCallback
-} from "react";
+import { FC } from "react";
 import { useIntl } from "react-intl";
 import {
 	Box,
+	IconButton,
 	Typography
 } from "@mui/material";
 import Link from "@mui/material/Link";
@@ -17,6 +15,7 @@ import {
 	AuthCurrentUser,
 	AuthValues
 } from "../../../contexts/AuthContext.types";
+import GoogleLogo from "../../../assets/google.svg";
 import FormFieldText from "../../FormFieldText/FormFieldText";
 import Button from "../../Button/Button";
 import { AppRouteEnum } from "../../../types";
@@ -31,17 +30,13 @@ export const LoginForm: FC<LoginFormProps> = ({
 }) => {
 	const intl = useIntl();
 	const authContext = useAuth() as AuthValues;
+	if (authContext === null) {
+		return null;
+	}
 
 	const { currentUser, googlePopupSignIn } = authContext as AuthCurrentUser;
 
-	const onGoogleLoginClick = useCallback(
-		() => (authContext !== null && currentUser) && googlePopupSignIn(),
-		[
-			currentUser,
-			currentUser?.userId,
-			googlePopupSignIn
-		]
-	);
+	const onGoogleLoginClick = () => googlePopupSignIn();
 
 	const loginText = intl.formatMessage({
 		id: "email",
@@ -108,37 +103,42 @@ export const LoginForm: FC<LoginFormProps> = ({
 						</Button>
 					</Box>
 
-					<Box>
-						<Button
-							onClick={onGoogleLoginClick}
-							fullWidth={true}
-						>
-							{intl.formatMessage({
-								id: "loginWithGoogle",
-								defaultMessage: "Google login"
-							})}
-						</Button>
-					</Box>
-					<Box mt={2}>
-						<Typography
-							color="secondary"
-							variant="body1"
-						>
+					{!!(currentUser === null ) &&
+						<Box>
+							<Button
+								onClick={onGoogleLoginClick}
+								fullWidth={true}
+								sx={loginStyles.googleBtn}
+							>
+								<Box sx={loginStyles.googleBtnWrap}>
+									<img
+										src={GoogleLogo}
+										alt={"Google logo"}
+										width="25"
+									/>
+									{intl.formatMessage({
+										id: "loginWithGoogle",
+										defaultMessage: "Google login"
+									})}
+								</Box>
+							</Button>
+						</Box>}
+					<Box sx={loginStyles.signUpWrap}>
+						<Typography sx={loginStyles.message} >
 							{intl.formatMessage({
 								id: "dontHaveAcc",
 								defaultMessage: "Don't have account?"
 							})}
-
-							<Link
-								href={AppRouteEnum.SIGNUP}
-								variant="body1"
-							>
-								{intl.formatMessage({
-									id: "signUp",
-									defaultMessage: "Sign Up"
-								})}
-							</Link>
 						</Typography>
+						<Link
+							href={AppRouteEnum.SIGNUP}
+							variant="body1"
+						>
+							{intl.formatMessage({
+								id: "signUp",
+								defaultMessage: "Sign Up"
+							})}
+						</Link>
 					</Box>
 				</Form>
 			)}

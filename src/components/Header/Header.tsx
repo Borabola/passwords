@@ -1,6 +1,4 @@
-import {
-	FC, useCallback
-} from "react";
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { useIntl } from "react-intl";
 import {
@@ -23,29 +21,23 @@ export const Header: FC = () => {
 	const intl = useIntl();
 	const navigate = useNavigate();
 	const authContext = useAuth() as AuthValues;
+	if (authContext === null) {
+		return null;
+	}
 
 	const { currentUser, logout } = authContext as AuthCurrentUser;
 
-	const onLogClick = useCallback(
-		() => {
-			return () => {
-				(authContext !== null && currentUser) ?
-					logout() :
-					navigate(AppRouteEnum.LOGIN);
-			};
-		},
-		[
-			currentUser,
-			currentUser?.userId,
-			logout
-		]
-	);
+	const onLogClick = () => {
+		(currentUser && currentUser?.email) ?
+			logout() :
+			navigate(AppRouteEnum.LOGIN);
+	};
 
 	const ariaLabel = currentUser ?
-		`${currentUser.email} ${intl.formatMessage({
+		`${intl.formatMessage({
 			id: "logout",
 			defaultMessage: "Logout"
-		})}`
+		})} ${currentUser?.email}`
 		:
 		intl.formatMessage({
 			id: "login",

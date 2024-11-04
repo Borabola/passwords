@@ -13,7 +13,7 @@ import FormFieldText from "../../FormFieldText/FormFieldText";
 import Button from "../../Button/Button";
 import { AppRouteEnum } from "../../../types";
 import { getValidationSchema } from "./SignUpForm.schema";
-import { loginStyles } from "./SignUpForm.styles";
+import { signUpStyles as styles } from "./SignUpForm.styles";
 import type { SinUpFormProps } from "./SignUpForm.types";
 
 export const SignUpForm: FC<SinUpFormProps> = ({
@@ -51,21 +51,21 @@ export const SignUpForm: FC<SinUpFormProps> = ({
 				<Form>
 					<Box
 						component="div"
-						sx={loginStyles.pageContent}
+						sx={styles.pageContent}
 					>
 						<Typography
-							sx={loginStyles.title}
+							sx={styles.title}
 							variant="h1"
 						>
 							{intl.formatMessage({
-								id: "signIn",
-								defaultMessage: "Sign In"
+								id: "signUp",
+								defaultMessage: "Sign Up"
 							})}
 						</Typography>
 						<FormFieldText
 							type="email"
 							name="email"
-							sx={loginStyles.textInput}
+							sx={styles.textInput}
 							title={""}
 							placeholder={loginText}
 							variant="filled"
@@ -74,7 +74,7 @@ export const SignUpForm: FC<SinUpFormProps> = ({
 						<FormFieldText
 							type="password"
 							name="password"
-							sx={loginStyles.textInput}
+							sx={styles.textInput}
 							title={""}
 							placeholder={intl.formatMessage({
 								id: "password",
@@ -86,7 +86,7 @@ export const SignUpForm: FC<SinUpFormProps> = ({
 						<FormFieldText
 							type="password"
 							name="passwordConfirm"
-							sx={loginStyles.textInput}
+							sx={styles.textInput}
 							title={""}
 							placeholder={intl.formatMessage({
 								id: "confirmPassword",
@@ -111,24 +111,19 @@ export const SignUpForm: FC<SinUpFormProps> = ({
 						</Button>
 					</Box>
 
-					<Box mt={2}>
-						<Typography
-							color="#ffffff"
-							variant="body1"
-						>
+					<Box sx={styles.loginWrap}>
+						<Typography sx={styles.message}>
 							{intl.formatMessage({
 								id: "haveAccount",
 								defaultMessage: "Have account?n"
 							})}
-							<Link
-								href={AppRouteEnum.LOGIN}
-							>
-								{intl.formatMessage({
-									id: "login",
-									defaultMessage: "Log in"
-								})}
-							</Link>
 						</Typography>
+						<Link href={AppRouteEnum.LOGIN} >
+							{intl.formatMessage({
+								id: "login",
+								defaultMessage: "Log in"
+							})}
+						</Link>
 					</Box>
 				</Form>
 			)}

@@ -21,7 +21,6 @@ export const buttonStyles = {
 		overflow: "hidden",
 		outline: "none",
 		transition: "0.3 ease",
-
 		"&.MuiButton-contained": {
 			color: "primary.contrastText",
 			"&.MuiButtonBase-root.MuiButton-root:hover": {
@@ -29,7 +28,6 @@ export const buttonStyles = {
 				opacity: 0.8,
 			}
 		},
-
 		"&:disabled": {
 			opacity: 0.8,
 		},

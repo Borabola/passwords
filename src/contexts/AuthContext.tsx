@@ -134,11 +134,6 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 				email: result.user.email,
 				userId: result.user.uid
 			};
-
-			console.log(
-				"newUser",
-				newUser
-			);
 			setCurrentUser(newUser);
 			dispatch(requireAuthorization(AuthStatusEnum.AUTH));
 			navigate(

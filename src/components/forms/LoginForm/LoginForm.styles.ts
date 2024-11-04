@@ -23,7 +23,10 @@ export const loginStyles = {
 	},
 	title: {
 		textAlign: "center",
-		marginBottom: (theme: Theme) => theme.spacing(62 / 8),
+		marginBottom: (theme: Theme) => ({
+			xs: theme.spacing(20 / 8),
+			md: theme.spacing(60 / 8),
+		}),
 	},
 	textInput: {
 		color: "primary.main",
@@ -82,4 +85,35 @@ export const loginStyles = {
 			border: "none"
 		},
 	},
+	message: {
+		fontSize: pxToRem(14),
+		color: "primary.main"
+	},
+	signUpWrap: {
+		display: "flex",
+		flexDirection: "column",
+		alignItems: "center",
+		marginTop: (theme: Theme) => ({
+			xs: theme.spacing(10 / 8),
+			md: theme.spacing(20 / 8),
+		}),
+		gap: (theme: Theme) => ({
+			xs: theme.spacing(10 / 8),
+			md: theme.spacing(20 / 8),
+		}),
+	},
+	googleBtn: {
+		marginTop: (theme: Theme) => theme.spacing(20 / 8),
+		marginBottom: (theme: Theme) => theme.spacing(20 / 8),
+	},
+	googleBtnWrap: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		"& img": {
+			width: (theme: Theme) => theme.spacing(25 / 8),
+			height: (theme: Theme) => theme.spacing(25 / 8),
+			marginRight: (theme: Theme) => theme.spacing(10/ 8),
+		}
+	}
 };

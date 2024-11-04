@@ -4,8 +4,17 @@ import { pxToRem } from "../../utils";
 export const resulBlockStyles = {
 	wrapper: {
 		position: "relative",
-		width: (theme: Theme) => theme.spacing(500 / 8),
+		width: (theme: Theme) => ({
+			xs: "100%",
+			md: theme.spacing(500 / 8)
+		}),
+		minWidth: (theme: Theme) => ({
+			xs: theme.spacing(300 / 8),
+			md: theme.spacing(500 / 8)
+		}),
 		height: (theme: Theme) => theme.spacing(100 / 8),
+		display: "flex",
+		alignItems: "center",
 		backgroundColor: "common.white",
 		borderRadius: (theme: Theme) => theme.spacing(10 / 8),
 		overflow: "hidden"
@@ -13,14 +22,19 @@ export const resulBlockStyles = {
 	scrollContainer: {
 		padding: (theme: Theme) => ({
 			xs: theme.spacing(
-				10 / 8,
+				0,
+				90 / 8,
+				0,
 				20 / 8
 			),
 			md: theme.spacing(
-				30 / 8,
+				0,
+				90 / 8,
+				0,
 				30 / 8
 			)
 		}),
+		height: "100%",
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "flex-start",
@@ -39,7 +53,6 @@ export const resulBlockStyles = {
 		}
 	},
 	text: {
-		width: "calc(100% - 150px)",
 		fontSize: pxToRem(50),
 	},
 	iconBtn: {

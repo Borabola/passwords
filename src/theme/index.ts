@@ -273,56 +273,13 @@ theme.components = {
 			}
 		}
 	},
-	MuiMenu: {
-		styleOverrides: {
-			paper: {
-				maxHeight: `${theme.spacing(160 / 8)}!important`,
-			},
-			list: {
-				overflowY: "auto",
-				maxHeight: `${theme.spacing(160 / 8)}!important`,
-				paddingTop: theme.spacing(15 / 8),
-				paddingBottom: theme.spacing(15 / 8),
-				"& option": {
-					paddingLeft: theme.spacing(15 / 8),
-					backgroundColor: theme.palette.background.paper,
-					"&:hover": {
-						backgroundColor: "rgba(0, 16, 100, 0.08)",
-						cursor: "pointer"
-					}
-				}
-			}
-		}
-	},
 	MuiPaper: {
 		styleOverrides: {
 			root: {
 				backgroundColor: theme.palette.background.paper
 			}
 		}
-	},
-	MuiSelect: {
-		defaultProps: {
-			variant: "outlined",
-		},
-		styleOverrides: {
-			outlined: {
-				padding: theme.spacing(
-					1.5,
-					2
-				),
-			}
-		}
-	},
-	MuiTableCell: {
-		styleOverrides: {
-			paddingNone: {
-				"&:first-of-type": {
-					padding: "0!important"
-				}
-			}
-		}
-	},
+	}
 };
 
 export default theme;

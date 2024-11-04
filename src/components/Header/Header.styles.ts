@@ -5,7 +5,14 @@ export const headerStyles = {
 		display: "flex",
 		alignItems: "center",
 		justifyContent: "space-between",
-		minWidth: (theme: Theme) => theme.spacing(500 / 8),
+		width: (theme: Theme) => ({
+			xs: "100%",
+			md: theme.spacing(500 / 8)
+		}),
+		minWidth: (theme: Theme) => ({
+			xs: theme.spacing(300 / 8),
+			md: theme.spacing(500 / 8)
+		}),
 		padding: (theme: Theme) => theme.spacing(
 			8 / 8,
 			30 / 8
