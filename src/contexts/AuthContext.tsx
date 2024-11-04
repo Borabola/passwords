@@ -17,9 +17,7 @@ import {
 } from "react";
 import { useIntl } from "react-intl";
 import { useDispatch } from "react-redux";
-//import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-//import { stateType } from "../components/forms/LoginForm/LoginForm.types";
 import { auth } from "../firebase/firebaseConfig";
 import { requireAuthorization } from "../redux/auth/sliceReducer";
 import {
@@ -52,7 +50,6 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 	const [isLoading, setIsLoading] = useState(false);
 
 	const dispatch = useDispatch();
-	//const history = useHistory();
 	const navigate = useNavigate();
 
 	useEffect(
