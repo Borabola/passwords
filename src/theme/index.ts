@@ -115,7 +115,7 @@ theme.components = {
 			body: {
 				fontSize: defaultBodyFontSize,
 				fontFamily: theme.typography.fontFamily,
-				backgroundColor: theme.palette.common.white,
+				backgroundColor: theme.palette.background.paper,
 				letterSpacing: 0.25,
 				minHeight: "100vh",
 				padding: 0,
