@@ -13,6 +13,7 @@
     "haveAccount": "Have account?",
     "login": "Log in",
     "loginWithGoogle": "Google login",
+    "logout": "Log out",
     "muchPasswords": "Your passwords do not match.",
     "password": "Password",
     "yup.lowercase": "One lowercase character",

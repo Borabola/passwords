@@ -10,17 +10,10 @@ import { PasswordFormValues } from "../../components/forms";
 import PasswordForm from "../../components/forms/PasswordForm/PasswordForm";
 import { generatePassword } from "../../utils";
 import ResultBlock from "../../components/ResultBlock/ResultBlock";
-import { useAuth } from "../../contexts/AuthContext";
-import {
-	AuthCurrentUser,
-	AuthValues
-} from "../../contexts/AuthContext.types";
 import { mainContainerStyles as styles } from "./MainContainer.styles";
 
 export const MainContainer: FC = () => {
 	const [password, setPassword] = useState<string>("");
-
-	const authContext = useAuth() as AuthValues;
 
 	const initialValues = {
 		passwordLength: 8,
@@ -37,18 +30,11 @@ export const MainContainer: FC = () => {
 		[]
 	);
 
-	if (authContext === null) {
-		return null;
-	}
-
-	const { currentUser } = authContext as AuthCurrentUser;
-
-	console.log("currentUser", currentUser)
-
 	const onSubmit = (
 		values: PasswordFormValues, form: FormikHelpers<PasswordFormValues>
 	) => {
 		setPassword(generatePassword(values));
+		form.setSubmitting(false);
 	};
 
 	return (

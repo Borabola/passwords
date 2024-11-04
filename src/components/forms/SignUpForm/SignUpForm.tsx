@@ -11,6 +11,7 @@ import {
 import { useAuth } from "../../../contexts/AuthContext";
 import FormFieldText from "../../FormFieldText/FormFieldText";
 import Button from "../../Button/Button";
+import { AppRouteEnum } from "../../../types";
 import { getValidationSchema } from "./SignUpForm.schema";
 import { loginStyles } from "./SignUpForm.styles";
 import type { SinUpFormProps } from "./SignUpForm.types";
@@ -120,11 +121,7 @@ export const SignUpForm: FC<SinUpFormProps> = ({
 								defaultMessage: "Have account?n"
 							})}
 							<Link
-								//component={RouterLink}
-								//to="login"
-
-								//variant="body1"
-								href="/login"
+								href={AppRouteEnum.LOGIN}
 							>
 								{intl.formatMessage({
 									id: "login",

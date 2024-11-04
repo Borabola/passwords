@@ -7,18 +7,13 @@ import {
 import {
 	Form,
 	Formik,
-	//FormikFormProps
 } from "formik";
-// import {
-// 	AuthContext, useAuth
-// } from "../../../contexts/AuthContext";
 import Button from "../../Button/Button";
+import FormCheckbox from "../../FormCheckbox/FormCheckbox";
+import FormSlider from "../../FormSlider/FormSlider";
 import { validateShema } from "./PasswordForm.schema";
 import { passwordFormStyles as styles } from "./PasswordForm.styles";
 import type { PasswordFormProps } from "./PasswordForm.types";
-//import { AuthValues } from "../../../contexts/AuthContext.types";
-import FormCheckbox from "../../FormCheckbox/FormCheckbox";
-import FormSlider from "../../FormSlider/FormSlider";
 
 export const PasswordForm: FC<PasswordFormProps> = ({
 	initialValues,
@@ -26,12 +21,6 @@ export const PasswordForm: FC<PasswordFormProps> = ({
 	onSubmit
 }) => {
 	const intl = useIntl();
-	// const theme = useTheme();
-	// const authContext = useAuth() as AuthValues;
-
-	// if (authContext === null) {
-	// 	return null;
-	// }
 	const labelText = intl.formatMessage({
 		id: "passwordLength",
 		defaultMessage: "Password Length"
@@ -94,7 +83,7 @@ export const PasswordForm: FC<PasswordFormProps> = ({
 							fullWidth
 							type="submit"
 							variant="contained"
-							isLoading={isLoading ?? false}
+							isLoading={(isSubmitting || isLoading) ?? false}
 						>
 							{intl.formatMessage({
 								id: "go",
@@ -102,7 +91,6 @@ export const PasswordForm: FC<PasswordFormProps> = ({
 							})}
 						</Button>
 					</Box>
-
 				</Form>
 			)}
 		</Formik>

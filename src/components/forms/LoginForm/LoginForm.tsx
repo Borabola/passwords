@@ -1,5 +1,4 @@
 import {
-	Context,
 	FC,
 	useCallback
 } from "react";
@@ -13,15 +12,17 @@ import {
 	Form,
 	Formik
 } from "formik";
+import { useAuth } from "../../../contexts/AuthContext";
 import {
-	AuthContext, useAuth
-} from "../../../contexts/AuthContext";
+	AuthCurrentUser,
+	AuthValues
+} from "../../../contexts/AuthContext.types";
 import FormFieldText from "../../FormFieldText/FormFieldText";
 import Button from "../../Button/Button";
+import { AppRouteEnum } from "../../../types";
 import { validateShema } from "./LoginForm.schema";
 import { loginStyles } from "./LoginForm.styles";
 import type { LoginFormProps } from "./LoginForm.types";
-import { AuthValues } from "../../../contexts/AuthContext.types";
 
 export const LoginForm: FC<LoginFormProps> = ({
 	initialValues,
@@ -31,25 +32,16 @@ export const LoginForm: FC<LoginFormProps> = ({
 	const intl = useIntl();
 	const authContext = useAuth() as AuthValues;
 
-	// if (authContext === null) {
-	// 	return null;
-	// }
+	const { currentUser, googlePopupSignIn } = authContext as AuthCurrentUser;
 
-	console.log(
-		"authContext",
-		authContext
+	const onGoogleLoginClick = useCallback(
+		() => (authContext !== null && currentUser) && googlePopupSignIn(),
+		[
+			currentUser,
+			currentUser?.userId,
+			googlePopupSignIn
+		]
 	);
-
-	//const { googlePopupSignIn} = AuthContext;
-
-	// const onGoogleLoginClick = useCallback(
-	// 	() => {
-	// 		return () =>
-	// 			authContext !== null &&
-	// 			googlePopupSignIn();
-	// 	},
-	// 	[AuthContext]
-	// );
 
 	const loginText = intl.formatMessage({
 		id: "email",
@@ -118,8 +110,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 
 					<Box>
 						<Button
-							//onClick={() => googlePopupSignIn()}
-							//onClick={onGoogleLoginClick}
+							onClick={onGoogleLoginClick}
 							fullWidth={true}
 						>
 							{intl.formatMessage({
@@ -139,8 +130,7 @@ export const LoginForm: FC<LoginFormProps> = ({
 							})}
 
 							<Link
-								//component={RouterLink}
-								href="/signUp"
+								href={AppRouteEnum.SIGNUP}
 								variant="body1"
 							>
 								{intl.formatMessage({

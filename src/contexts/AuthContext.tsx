@@ -23,10 +23,10 @@ import { requireAuthorization } from "../redux/auth/sliceReducer";
 import {
 	AppRouteEnum, AuthStatusEnum
 } from "../types";
-// import {
-// 	outputtingError,
-// 	outputtingGoogleError
-// } from "../utils/toastHelper";
+import {
+	outputtingError,
+	outputtingGoogleError
+} from "../utils/toastHelper";
 import {
 	AuthProviderProps,
 	AuthValues,
@@ -34,9 +34,6 @@ import {
 	FirebaseError,
 	SProps
 } from "./AuthContext.types";
-import {
-	outputtingError, outputtingGoogleError
-} from "../utils/toastHelper";
 
 export const AuthContext = createContext<AuthValues | null>(null);
 
@@ -110,12 +107,7 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 			};
 			setCurrentUser(newUser);
 			dispatch(requireAuthorization(AuthStatusEnum.AUTH));
-			//history.replace(from);
-			console.log(
-				"AuthContext login",
-				auth
-			);
-			navigate("/");
+			navigate(AppRouteEnum.HOME);
 
 		} catch (error) {
 			outputtingError(
@@ -149,8 +141,10 @@ export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
 			);
 			setCurrentUser(newUser);
 			dispatch(requireAuthorization(AuthStatusEnum.AUTH));
-			//history.replace(from);
-			navigate("/");
+			navigate(
+				AppRouteEnum.HOME,
+				{ replace: true }
+			);
 		} catch (error) {
 			outputtingGoogleError(
 				(error as FirebaseError).code,
