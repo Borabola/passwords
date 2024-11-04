@@ -2,7 +2,6 @@ import { FC } from "react";
 import { useIntl } from "react-intl";
 import {
 	Box,
-	IconButton,
 	Typography
 } from "@mui/material";
 import Link from "@mui/material/Link";
