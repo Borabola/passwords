@@ -3,7 +3,8 @@ import { toast } from "react-toastify";
 import {
 	Box,
 	Typography,
-	IconButton
+	IconButton,
+	Tooltip
 } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { resulBlockStyles as styles } from "./ResultBlock.styles";
@@ -14,7 +15,6 @@ export const ResultBlock: FC<ResultBlockProps> = ({
 	password
 }) => {
 	const intl = useIntl();
-	//toast.error(intl.formatMessage({ id: "emailAlreadyExist" }));
 	const handleCopyToClipboard = () => {
 		if (password) {
 			navigator.clipboard
@@ -26,6 +26,11 @@ export const ResultBlock: FC<ResultBlockProps> = ({
 		}
 	};
 
+	const ariaLabel = intl.formatMessage({
+		id: "copy",
+		defaultMessage: "Copy"
+	});
+
 	return (
 		<Box sx={styles.wrapper}>
 			<Box sx={styles.scrollContainer}>
@@ -33,15 +38,17 @@ export const ResultBlock: FC<ResultBlockProps> = ({
 					{password}
 				</Typography>
 			</Box>
-			<IconButton
-				aria-label="copy password"
-				sx={styles.iconBtn}
-				onClick={handleCopyToClipboard}
-			>
-				<ContentCopyIcon
-					sx={styles.icon}
-				/>
-			</IconButton>
+			<Tooltip title={ariaLabel}>
+				<IconButton
+					aria-label="ariaLabel"
+					sx={styles.iconBtn}
+					onClick={handleCopyToClipboard}
+				>
+					<ContentCopyIcon
+						sx={styles.icon}
+					/>
+				</IconButton>
+			</Tooltip>
 		</Box>
 	);
 };
