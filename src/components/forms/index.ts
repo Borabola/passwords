@@ -4,3 +4,5 @@ export * from "./SignUpForm/SignUpForm";
 export * from "./SignUpForm/SignUpForm.types";
 export * from "./PasswordForm/PasswordForm";
 export * from "./PasswordForm/PasswordForm.types";
+export * from "./PwSaveForm/PwSaveForm";
+export * from "./PwSaveForm/PwSaveForm.types";

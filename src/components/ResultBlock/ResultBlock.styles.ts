@@ -8,11 +8,12 @@ export const resulBlockStyles = {
 			xs: "100%",
 			md: theme.spacing(500 / 8)
 		}),
+		maxWidth: (theme: Theme) => theme.spacing(700 / 8),
 		minWidth: (theme: Theme) => ({
 			xs: theme.spacing(300 / 8),
 			md: theme.spacing(500 / 8)
 		}),
-		height: (theme: Theme) => theme.spacing(100 / 8),
+		height: (theme: Theme) => theme.spacing(90 / 8),
 		display: "flex",
 		alignItems: "center",
 		backgroundColor: "common.white",

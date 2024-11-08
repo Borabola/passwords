@@ -9,6 +9,7 @@ export const headerStyles = {
 			xs: "100%",
 			md: theme.spacing(500 / 8)
 		}),
+		maxWidth: (theme: Theme) => theme.spacing(700 / 8),
 		minWidth: (theme: Theme) => ({
 			xs: theme.spacing(300 / 8),
 			md: theme.spacing(500 / 8)

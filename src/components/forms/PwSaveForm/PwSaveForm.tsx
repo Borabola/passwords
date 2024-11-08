@@ -9,21 +9,20 @@ import {
 	Formik,
 } from "formik";
 import Button from "../../Button/Button";
-import FormCheckbox from "../../FormCheckbox/FormCheckbox";
-import FormSlider from "../../FormSlider/FormSlider";
-import { validateShema } from "./PasswordForm.schema";
+import { validateShema } from "./PwSaveForm.schema";
 import { passwordFormStyles as styles } from "../PasswordForm.styles";
-import type { PasswordFormProps } from "./PasswordForm.types";
+import type { PwSaveFormProps } from "./PwSaveForm.types";
+import FormFieldText from "../../FormFieldText/FormFieldText";
 
-export const PasswordForm: FC<PasswordFormProps> = ({
+export const PwSaveForm: FC<PwSaveFormProps> = ({
 	initialValues,
 	isLoading,
 	onSubmit
 }) => {
 	const intl = useIntl();
-	const labelText = intl.formatMessage({
-		id: "passwordLength",
-		defaultMessage: "Password Length"
+	const tagText = intl.formatMessage({
+		id: "tagPlaceholder",
+		defaultMessage: "Add tag for password"
 	});
 
 	return (
@@ -43,38 +42,32 @@ export const PasswordForm: FC<PasswordFormProps> = ({
 							variant="h2"
 						>
 							{intl.formatMessage({
-								id: "createPassword",
-								defaultMessage: "Create strong password"
+								id: "savePassword",
+								defaultMessage: "Save new password"
 							})}
 						</Typography>
-						<FormSlider
-							name="passwordLength"
-							labelText={labelText}
-							defaultValue={8}
-							minValue={4}
-							maxValue={125}
-							step={1}
-							sx={styles.sliderWrapper}
-						/>
+
 						<Box sx={styles.lineWrapper}>
-							<FormCheckbox
-								name="hasUppercase"
-								label="A-Z"
+							<FormFieldText
+								type="text"
+								name="tag"
+								sx={styles.textInput}
+								title={""}
+								placeholder={tagText}
+								variant="filled"
+								color="primary"
+								required
 							/>
-							<FormCheckbox
-								name="hasLowercase"
-								label="a-z"
-							/>
-							<FormCheckbox
-								name="hasNumbers"
-								label="0 - 9"
-							/>
-							<FormCheckbox
-								name="hasSymbols"
-								label="!@#$%^&*"
+							<FormFieldText
+								type="text"
+								name="description"
+								sx={styles.textInput}
+								title={""}
+								//placeholder={loginText}
+								variant="filled"
+								color="primary"
 							/>
 						</Box>
-
 						<Button
 							color="primary"
 							disabled={isSubmitting}
@@ -84,8 +77,8 @@ export const PasswordForm: FC<PasswordFormProps> = ({
 							isLoading={(isSubmitting || isLoading) ?? false}
 						>
 							{intl.formatMessage({
-								id: "go",
-								defaultMessage: "Go"
+								id: "save",
+								defaultMessage: "Save"
 							})}
 						</Button>
 					</Form>
@@ -95,4 +88,4 @@ export const PasswordForm: FC<PasswordFormProps> = ({
 	);
 };
 
-export default PasswordForm;
+export default PwSaveForm;
