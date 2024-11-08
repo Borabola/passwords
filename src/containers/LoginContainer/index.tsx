@@ -24,26 +24,10 @@ export const LoginContainer: FC = () => {
 	const onSubmit = (
 		values: Values, form: FormikHelpers<Values>
 	) => {
-		// const formData = new FormData();
-		// formData.append(
-		// 	"email",
-		// 	values.email
-		// );
-		// formData.append(
-		// 	"password",
-		// 	values.password
-		// );
-
-		console.log(
-			"login values",
-			values
-		);
 		login(values);
 
 		form.setSubmitting(false);
 	};
-
-	const isLoginLoading = false; //!!!
 
 	return (
         <Box
@@ -52,7 +36,7 @@ export const LoginContainer: FC = () => {
 			<LoginForm
 				initialValues={initialValuesLogin}
 				onSubmit={onSubmit}
-				isLoading={isLoginLoading}
+				isLoading={false}
 			/>
         </Box>
 	);
