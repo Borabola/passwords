@@ -22,7 +22,7 @@ export const PwSaveForm: FC<PwSaveFormProps> = ({
 	const intl = useIntl();
 	const tagText = intl.formatMessage({
 		id: "tagPlaceholder",
-		defaultMessage: "Add tag for password"
+		defaultMessage: "Tag for password"
 	});
 
 	return (
@@ -48,6 +48,12 @@ export const PwSaveForm: FC<PwSaveFormProps> = ({
 						</Typography>
 
 						<Box sx={styles.lineWrapper}>
+							<Typography sx={styles.legend}>
+								{intl.formatMessage({
+								id: "tagAddPlaceholder",
+								defaultMessage: "Add tag for password"
+							})}
+							</Typography>
 							<FormFieldText
 								type="text"
 								name="tag"
@@ -58,12 +64,17 @@ export const PwSaveForm: FC<PwSaveFormProps> = ({
 								color="primary"
 								required
 							/>
+							<Typography sx={styles.legend}>
+								{intl.formatMessage({
+								id: "description",
+								defaultMessage: "Add a website or additional description"
+								})}
+							</Typography>
 							<FormFieldText
 								type="text"
 								name="description"
 								sx={styles.textInput}
 								title={""}
-								//placeholder={loginText}
 								variant="filled"
 								color="primary"
 							/>

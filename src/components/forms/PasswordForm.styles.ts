@@ -36,6 +36,7 @@ export const passwordFormStyles = {
 		padding: (theme: Theme) => theme.spacing(30 / 8),
 		backgroundColor: "common.white",
 		borderRadius: (theme: Theme) => theme.spacing(10 / 8),
+		marginBottom: (theme: Theme) => theme.spacing(30 / 8),
 	},
 	sliderWrapper: {
 		"&": {
@@ -140,4 +141,7 @@ export const passwordFormStyles = {
 			border: "none"
 		},
 	},
+	legend: {
+		marginTop: (theme: Theme) => theme.spacing(15 / 8),
+	}
 };
